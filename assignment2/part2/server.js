@@ -214,6 +214,39 @@ const server = http.createServer(async (req, res) => {
         }
     }
 
+    // Q3: DELETE /user/:id
+    if (req.method === "DELETE" && req.url.startsWith("/user/")) {
+        try {
+            // Get user ID from URL
+            const id = req.url.split("/")[2];
+
+            // Read users from JSON file
+            const users = readUsers();
+
+            // Check if user exists
+            if (!users[id]) {
+                return sendJson(res, 404, {
+                    message: "User not found",
+                });
+            }
+
+            // Delete user
+            delete users[id];
+
+            // Save updated users to JSON file
+            writeUsers(users);
+
+            return sendJson(res, 200, {
+                message: "User deleted successfully",
+            });
+
+        } catch (error) {
+            return sendJson(res, 500, {
+                message: "Internal server error",
+            });
+        }
+    }
+
     // Route not found
     return sendJson(res, 404, {
         message: "Route not found",
