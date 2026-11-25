@@ -22,5 +22,3 @@ console.log(findKthPositive([2, 3, 4, 7, 11], 5));
 // Example 2
 console.log(findKthPositive([1, 2, 3, 4], 2));
 
-// Example 3
-console.log(findKthPositive([2, 3, 4, 5, 6], 1));
