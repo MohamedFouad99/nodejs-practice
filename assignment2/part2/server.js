@@ -7,6 +7,9 @@ const PORT = 3000;
 
 const USERS_FILE = path.join(__dirname, "users.json");
 
+
+//! Postman collection for testing the API endpoints : https://www.postman.com/telecoms-operator-53572826/nodejs-assignment/collection/17281365-a1c128ae-ee5f-4c7c-9b69-dc0e8936a92b?action=share&source=copy-link&creator=17281365
+
 // Read users from JSON file
 function readUsers() {
     const data = fs.readFileSync(USERS_FILE, "utf8");
