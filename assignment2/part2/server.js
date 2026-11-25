@@ -247,6 +247,25 @@ const server = http.createServer(async (req, res) => {
         }
     }
 
+    // Q4: GET /user
+    if (req.method === "GET" && req.url === "/user") {
+        try {
+            // Read all users from JSON file
+            const users = readUsers();
+
+            // Return all users
+            return sendJson(res, 200, {
+                message: "Users retrieved successfully",
+                users: users,
+            });
+
+        } catch (error) {
+            return sendJson(res, 500, {
+                message: "Internal server error",
+            });
+        }
+    }
+
     // Route not found
     return sendJson(res, 404, {
         message: "Route not found",
