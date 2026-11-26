@@ -1,7 +1,7 @@
 {
-  "name": "javascript-practice",
+  "name": "nodejs-practice",
   "version": "1.0.0",
-  "description": "JavaScript practice assignments",
+  "description": "Node.js practice assignments: core JavaScript, the http module, and REST API endpoints",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
